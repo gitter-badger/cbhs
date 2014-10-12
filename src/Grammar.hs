@@ -11,7 +11,7 @@ import Nodes.Expression (Expr (Op, IntLit, StrLit, FloatLit))
 [peggy|
 
 root :: Root
-  = rootStmt* { CompilationUnit $1 }
+  = rootStmt* !. { CompilationUnit $1 }
 
 rootStmt :: Stmt
   = expr '\n' { Line $1 }
