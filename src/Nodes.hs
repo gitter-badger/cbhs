@@ -4,4 +4,4 @@ import Data.Tree (Tree)
 
 
 class AstNode a where
-  tree :: a -> Tree String
+  ast :: a -> Tree String

@@ -7,4 +7,4 @@ data Stmt
   = Line { expr :: Expr }
 
 instance AstNode Stmt where
-  tree (Line expr) = tree expr
+  ast (Line expr) = ast expr

@@ -13,7 +13,7 @@ data Expr
 
 
 instance AstNode Expr where
-  tree (Op operator left right)  = Node operator [tree left, tree right]
-  tree (StrLit str)              = Node ("\"" ++ str ++ "\"") []
-  tree (IntLit int)              = Node (show int) []
-  tree (FloatLit float)          = Node (show float) []
+  ast (Op operator left right)  = Node operator [ast left, ast right]
+  ast (StrLit str)              = Node ("\"" ++ str ++ "\"") []
+  ast (IntLit int)              = Node (show int) []
+  ast (FloatLit float)          = Node (show float) []

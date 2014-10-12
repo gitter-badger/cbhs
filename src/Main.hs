@@ -12,7 +12,7 @@ main =
 
 
 result parseResult = case parseResult of
-  Right rootNode -> drawVerticalTree . tree $ rootNode
+  Right rootNode -> drawVerticalTree . ast $ rootNode
   Left  err      -> "Error: " ++ (show err)
 
 parsed = parseString root ""

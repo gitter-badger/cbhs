@@ -11,4 +11,4 @@ data Root = CompilationUnit { statements :: [Stmt] }
 
 
 instance AstNode Root where
-  tree (CompilationUnit statements) = Node "<root>" (map tree statements)
+  ast (CompilationUnit statements) = Node "<root>" (map ast statements)
