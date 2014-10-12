@@ -1,7 +1,7 @@
 {-# Language TemplateHaskell, QuasiQuotes, FlexibleContexts #-}
 module Grammar where
 
-import Text.Peggy hiding (space, delimiter)
+import Text.Peggy hiding (Expr, space, delimiter)
 
 import Nodes.Root (Root (CompilationUnit))
 import Nodes.Statement (Stmt (Line))
@@ -16,12 +16,12 @@ root :: Root
 rootStmt :: Stmt
   = expr '\n' { Line $1 }
 
-expr :: Nodes.Expression.Expr
+expr :: Expr
   = expr "+" expr { Op "+" $1 $2 }
   / expr "-" expr { Op "-" $1 $2 }
   / term
 
-term :: Nodes.Expression.Expr
+term :: Expr
   = "(" expr ")"
   / cbint         { IntLit $1 }
   / cbfloat       { FloatLit $1 }
