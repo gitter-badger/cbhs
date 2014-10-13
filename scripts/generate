@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+alex src/Tokens.x
+happy src/Grammar.y

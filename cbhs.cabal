@@ -1,23 +1,22 @@
 
-name:                coolbasic-haskell
-version:             0.1.0
+Name:                coolbasic-haskell
+Version:             0.1.0
 -- synopsis:
 -- description:
--- license:
-license-file:        LICENSE
-author:              Matti Lankinen
-maintainer:          m.lankinen@iki.fi
--- copyright:
--- category:
-build-type:          Simple
--- extra-source-files:
-cabal-version:       >=1.10
+License:             MIT
+License-File:        LICENSE
+Author:              Matti Lankinen
+Maintainer:          m.lankinen@iki.fi
+Build-Type:          Simple
 
-executable cbhs-compiler
-  hs-source-dirs:      src
-  main-is:             Main.hs
+Cabal-Version:       >=1.10
+
+Executable cbhs-compiler
+  Hs-Source-Dirs:      src
+  Main-Is:             Main.hs
   -- other-modules:
   -- other-extensions:
-  build-depends:       base >=4.6 && <4.7, peggy ==0.3.2, containers ==0.5.0.0, pretty-tree ==0.1.0.0
+  Build-Depends:       base >= 4, array, containers, mtl, regex-compat, pretty-tree
+  Build-Tools:         alex, happy
   -- hs-source-dirs:
-  default-language:    Haskell2010
+  Default-Language:    Haskell2010
